@@ -6,5 +6,5 @@ plugins {
 apply(from = "$rootDir/compose-module.gradle")
 
 android {
-    namespace = "ir.codroid.core-ui"
+    namespace = "ir.codroid.core_ui"
 }
