@@ -73,6 +73,7 @@ dependencies {
     }
     with(Modules) {
         implementation(project(core))
+        implementation(project(coreUi))
         implementation(project(onboardingPresentation))
         implementation(project(onboardingDomain))
         implementation(project(trackerPresentation))
@@ -92,29 +93,29 @@ dependencies {
     }
 
     with(Retrofit) {
-    implementation(okHttp)
-    implementation(retrofit)
-    implementation(okHttpLoggingInterceptor)
-    implementation(moshiConverter)
+        implementation(okHttp)
+        implementation(retrofit)
+        implementation(okHttpLoggingInterceptor)
+        implementation(moshiConverter)
     }
     with(Room) {
-    kapt(roomCompiler)
-    implementation(roomKtx)
-    implementation(roomRuntime)
+        kapt(roomCompiler)
+        implementation(roomKtx)
+        implementation(roomRuntime)
     }
     with(Testing) {
 
-    testImplementation(junit4)
-    testImplementation(junitAndroidExt)
-    testImplementation(truth)
-    testImplementation(coroutines)
-    testImplementation(turbine)
-    testImplementation(composeUiTest)
-    testImplementation(mockk)
-    testImplementation(mockWebServer)
+        testImplementation(junit4)
+        testImplementation(junitAndroidExt)
+        testImplementation(truth)
+        testImplementation(coroutines)
+        testImplementation(turbine)
+        testImplementation(composeUiTest)
+        testImplementation(mockk)
+        testImplementation(mockWebServer)
 
-    androidTestImplementation(hiltTesting)
-    kaptAndroidTest(DaggerHilt.hiltCompiler)
-    androidTestImplementation(testRunner)
+        androidTestImplementation(hiltTesting)
+        kaptAndroidTest(DaggerHilt.hiltCompiler)
+        androidTestImplementation(testRunner)
     }
 }

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CaloryTracker</string>
+    <string name="welcome_text">Hello! Let\'s find out more about you :)</string>
+</resources>
