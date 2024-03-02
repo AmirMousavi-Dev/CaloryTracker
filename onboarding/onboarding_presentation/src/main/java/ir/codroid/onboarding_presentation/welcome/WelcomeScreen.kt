@@ -14,11 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import ir.codroid.core.R
+import ir.codroid.core.util.UiEvent
 import ir.codroid.core_ui.LocalSpacing
 import ir.codroid.onboarding_presentation.components.ActionButton
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    onNavigate: (UiEvent.Navigate) -> Unit
+) {
     val spacing = LocalSpacing.current
     Column(
         modifier = Modifier
@@ -37,6 +40,7 @@ fun WelcomeScreen() {
             text = stringResource(id = R.string.next),
             onClick = { /*TODO*/ },
             modifier = Modifier.align(Alignment.CenterHorizontally),
-            isEnable = true)
+            isEnable = true
+        )
     }
 }
