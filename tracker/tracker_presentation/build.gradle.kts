@@ -11,6 +11,7 @@ android {
 dependencies {
     with(Modules) {
         implementation(project(core))
+        implementation(project(coreUi))
         implementation(project(trackerDomain))
     }
     with(Coil) {

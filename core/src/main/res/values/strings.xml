@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">CaloryTracker</string>
+    <string name="welcome_text">Hello! Let\'s find out more about you :)</string>
+    <string name="next">Next</string>
+    <string name="whats_your_gender">What is your gender?</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="error_age_cant_be_empty">The age can\'t be empty</string>
+    <string name="whats_your_age">What\'s your age?</string>
+    <string name="years">years</string>
+    <string name="error_height_cant_be_empty">The height can\'t be empty</string>
+    <string name="whats_your_height">What\'s your height?</string>
+    <string name="cm">cm</string>
+    <string name="error_weight_cant_be_empty">The weight can\'t be empty</string>
+    <string name="whats_your_weight">What\'s your weight?</string>
+    <string name="kg">kg</string>
+    <string name="whats_your_activity_level">What\'s your activity level?</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="lose_keep_or_gain_weight">Do you want to lose, keep or gain weight?</string>
+    <string name="your_goal">Your goal:</string>
+    <string name="gain">Gain</string>
+    <string name="keep">Keep</string>
+    <string name="lose">Lose</string>
+    <string name="error_invalid_values">These are not valid values</string>
+    <string name="error_not_100_percent">The values must add up to 100%</string>
+    <string name="percent_proteins">% proteins</string>
+    <string name="percent_fats">% fats</string>
+    <string name="percent_carbs">% carbs</string>
+    <string name="what_are_your_nutrient_goals">What are your nutrient goals?</string>
+
+
+
+
+
+</resources>

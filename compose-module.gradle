@@ -52,6 +52,7 @@ dependencies {
     implementation Compose.viewModelCompose
     implementation Compose.activityCompose
 
+
     kapt DaggerHilt.hiltCompiler
     implementation DaggerHilt.hiltAndroid
 
@@ -74,3 +75,6 @@ dependencies {
     androidTestImplementation Testing.mockWebServer
     androidTestImplementation Testing.hiltTesting
 }
+//kapt {
+//    correctErrorTypes true
+//}
