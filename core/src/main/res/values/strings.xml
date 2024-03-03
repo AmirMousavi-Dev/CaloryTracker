@@ -18,5 +18,10 @@
     <string name="low">Low</string>
     <string name="medium">Medium</string>
     <string name="high">High</string>
+    <string name="lose_keep_or_gain_weight">Do you want to lose, keep or gain weight?</string>
+    <string name="your_goal">Your goal:</string>
+    <string name="gain">Gain</string>
+    <string name="keep">Keep</string>
+    <string name="lose">Lose</string>
 
 </resources>

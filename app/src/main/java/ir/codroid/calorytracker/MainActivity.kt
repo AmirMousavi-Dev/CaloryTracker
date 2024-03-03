@@ -23,6 +23,7 @@ import ir.codroid.core.navigation.Route
 import ir.codroid.onboarding_presentation.activity.ActivityScreen
 import ir.codroid.onboarding_presentation.age.AgeScreen
 import ir.codroid.onboarding_presentation.gender.GenderScreen
+import ir.codroid.onboarding_presentation.goal.GoalScreen
 import ir.codroid.onboarding_presentation.height.HeightScreen
 import ir.codroid.onboarding_presentation.weight.WeightScreen
 import ir.codroid.onboarding_presentation.welcome.WelcomeScreen
@@ -78,7 +79,7 @@ class MainActivity : ComponentActivity() {
                             ActivityScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.GOAL) {
-
+                            GoalScreen(onNavigate = navController::navigate)
                         }
 
                         composable(Route.TRACKER_OVERVIEW) {
