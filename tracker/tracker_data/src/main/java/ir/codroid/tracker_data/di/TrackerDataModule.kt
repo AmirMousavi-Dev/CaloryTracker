@@ -1,9 +1,12 @@
 package ir.codroid.tracker_data.di
 
+import android.app.Application
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import ir.codroid.tracker_data.local.TrackerDataBase
 import ir.codroid.tracker_data.remote.OpenFoodApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -37,4 +40,12 @@ object TrackerDataModule {
             .build()
             .create()
 
+    @Provides
+    @Singleton
+    fun providesTrackerDatabase(app: Application): TrackerDataBase =
+        Room.databaseBuilder(
+            app,
+            TrackerDataBase::class.java,
+            "tracker_db"
+        ).build()
 }
