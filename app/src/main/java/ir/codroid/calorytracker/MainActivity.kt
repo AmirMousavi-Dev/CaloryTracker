@@ -25,6 +25,7 @@ import ir.codroid.onboarding_presentation.age.AgeScreen
 import ir.codroid.onboarding_presentation.gender.GenderScreen
 import ir.codroid.onboarding_presentation.goal.GoalScreen
 import ir.codroid.onboarding_presentation.height.HeightScreen
+import ir.codroid.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import ir.codroid.onboarding_presentation.weight.WeightScreen
 import ir.codroid.onboarding_presentation.welcome.WelcomeScreen
 
@@ -73,7 +74,10 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.NUTRIENT_GOAL) {
-
+                            NutrientGoalScreen(
+                                snackBarHostState = snackBarHostState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.ACTIVITY) {
                             ActivityScreen(onNavigate = navController::navigate)
