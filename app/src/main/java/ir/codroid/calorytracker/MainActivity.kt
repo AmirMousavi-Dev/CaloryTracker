@@ -23,6 +23,7 @@ import ir.codroid.calorytracker.ui.theme.CaloryTrackerTheme
 import ir.codroid.core.navigation.Route
 import ir.codroid.onboarding_presentation.age.AgeScreen
 import ir.codroid.onboarding_presentation.gender.GenderScreen
+import ir.codroid.onboarding_presentation.height.HeightScreen
 import ir.codroid.onboarding_presentation.welcome.WelcomeScreen
 
 
@@ -59,7 +60,10 @@ class MainActivity : ComponentActivity() {
                             GenderScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.HEIGHT) {
-
+                            HeightScreen(
+                                snackBarHostState = snackBarHostState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.WEIGHT) {
 
