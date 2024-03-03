@@ -18,6 +18,7 @@ import ir.codroid.calorytracker.ui.theme.CaloryTrackerTheme
 import ir.codroid.core.navigation.Route
 import ir.codroid.onboarding_presentation.welcome.WelcomeScreen
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

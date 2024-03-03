@@ -75,3 +75,6 @@ dependencies {
     androidTestImplementation Testing.mockWebServer
     androidTestImplementation Testing.hiltTesting
 }
+//kapt {
+//    correctErrorTypes true
+//}
