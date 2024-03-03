@@ -5,4 +5,9 @@
     <string name="whats_your_gender">What is your gender?</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
+    <string name="error_age_cant_be_empty">The age can\'t be empty</string>
+    <string name="whats_your_age">What\'s your age?</string>
+    <string name="years">years</string>
+
+
 </resources>

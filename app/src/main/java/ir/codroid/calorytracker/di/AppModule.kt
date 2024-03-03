@@ -9,6 +9,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ir.codroid.core.data.preferences.DefaultPreferences
 import ir.codroid.core.domain.preferences.Preferences
+import ir.codroid.core.domain.use_case.FilterOutDigitsUseCase
 import javax.inject.Singleton
 
 @Module
@@ -30,5 +31,11 @@ object AppModule {
     fun providePreferences(
         sharedPreferences: SharedPreferences
     ): Preferences = DefaultPreferences(sharedPreferences)
+
+
+    @Provides
+    @Singleton
+    fun provideFilterOutDigitsUseCase() : FilterOutDigitsUseCase =
+        FilterOutDigitsUseCase()
 
 }
