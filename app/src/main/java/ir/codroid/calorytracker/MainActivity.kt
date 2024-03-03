@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -21,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.codroid.calorytracker.navigation.navigate
 import ir.codroid.calorytracker.ui.theme.CaloryTrackerTheme
 import ir.codroid.core.navigation.Route
+import ir.codroid.onboarding_presentation.activity.ActivityScreen
 import ir.codroid.onboarding_presentation.age.AgeScreen
 import ir.codroid.onboarding_presentation.gender.GenderScreen
 import ir.codroid.onboarding_presentation.height.HeightScreen
@@ -36,7 +36,6 @@ class MainActivity : ComponentActivity() {
         setContent {
             CaloryTrackerTheme {
                 val navController = rememberNavController()
-                val scaffoldState = rememberScrollState()
                 val snackBarHostState = remember { SnackbarHostState() }
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
@@ -76,7 +75,7 @@ class MainActivity : ComponentActivity() {
 
                         }
                         composable(Route.ACTIVITY) {
-
+                            ActivityScreen(onNavigate = navController::navigate)
                         }
                         composable(Route.GOAL) {
 
