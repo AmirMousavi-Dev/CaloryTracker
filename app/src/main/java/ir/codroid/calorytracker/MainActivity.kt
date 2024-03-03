@@ -24,6 +24,7 @@ import ir.codroid.core.navigation.Route
 import ir.codroid.onboarding_presentation.age.AgeScreen
 import ir.codroid.onboarding_presentation.gender.GenderScreen
 import ir.codroid.onboarding_presentation.height.HeightScreen
+import ir.codroid.onboarding_presentation.weight.WeightScreen
 import ir.codroid.onboarding_presentation.welcome.WelcomeScreen
 
 
@@ -66,7 +67,10 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.WEIGHT) {
-
+                            WeightScreen(
+                                snackBarHostState = snackBarHostState,
+                                onNavigate = navController::navigate
+                            )
                         }
                         composable(Route.NUTRIENT_GOAL) {
 
