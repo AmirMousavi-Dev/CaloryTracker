@@ -8,6 +8,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import ir.codroid.tracker_data.local.TrackerDataBase
 import ir.codroid.tracker_data.remote.OpenFoodApi
+import ir.codroid.tracker_data.repository.TrackerRepositoryImpl
+import ir.codroid.tracker_domain.repository.TrackerRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -48,4 +50,16 @@ object TrackerDataModule {
             TrackerDataBase::class.java,
             "tracker_db"
         ).build()
+
+    @Provides
+    @Singleton
+    fun providesTrackerRepository(
+        api: OpenFoodApi,
+        db: TrackerDataBase
+    ): TrackerRepository {
+        return TrackerRepositoryImpl(
+            dao = db.trackerDao,
+            api = api
+        )
+    }
 }

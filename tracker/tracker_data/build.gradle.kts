@@ -10,18 +10,18 @@ android {
 }
 dependencies {
     with(Modules) {
-        implementation(project(core))
-        implementation(project(trackerDomain))
+        "implementation"(project(core))
+        "implementation"(project(trackerDomain))
     }
     with(Retrofit) {
-        implementation(okHttp)
-        implementation(retrofit)
-        implementation(okHttpLoggingInterceptor)
-        implementation(moshiConverter)
+        "implementation"(okHttp)
+        "implementation"(retrofit)
+        "implementation"(okHttpLoggingInterceptor)
+        "implementation"(moshiConverter)
     }
     with(Room) {
         "kapt"(roomCompiler)
-        implementation(roomKtx)
-        implementation(roomRuntime)
+        "implementation"(roomKtx)
+        "implementation"(roomRuntime)
     }
 }
