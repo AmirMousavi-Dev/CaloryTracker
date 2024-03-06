@@ -1,4 +1,4 @@
-package ir.codroid.calorytracker.ui.theme
+package ir.codroid.core_ui
 
 import androidx.compose.ui.graphics.Color
 

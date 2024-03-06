@@ -33,8 +33,11 @@
     <string name="lunch">Lunch</string>
     <string name="dinner">Dinner</string>
     <string name="snacks">Snacks</string>
-
-
+    <string name="grams">g</string>
+    <string name="kcal">kcal</string>
+    <string name="carbs">Carbs</string>
+    <string name="protein">Protein</string>
+    <string name="fat">Fat</string>
 
 
 
