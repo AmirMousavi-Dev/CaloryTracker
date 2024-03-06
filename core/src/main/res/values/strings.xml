@@ -38,7 +38,11 @@
     <string name="carbs">Carbs</string>
     <string name="protein">Protein</string>
     <string name="fat">Fat</string>
-
+    <string name="previous_day">Previous day</string>
+    <string name="next_day">Next day</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="today">Today</string>
+    <string name="tomorrow">Tomorrow</string>
 
 
 </resources>
