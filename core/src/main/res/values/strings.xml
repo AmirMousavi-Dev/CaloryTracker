@@ -49,6 +49,7 @@
     <string name="nutrient_info">%dg • %dkcal</string>
     <string name="delete">Delete</string>
     <string name="add_meal">Add %s</string>
+    <string name="error_something_went_wrong">Oops, something went wrong!</string>
 
 
 
