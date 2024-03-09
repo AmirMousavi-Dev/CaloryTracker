@@ -44,6 +44,8 @@
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="add">Add</string>
+    <string name="extend">Extend</string>
+    <string name="collapse">Collapse</string>
 
 
 </resources>
