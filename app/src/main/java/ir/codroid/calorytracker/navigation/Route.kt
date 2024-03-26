@@ -1,4 +1,4 @@
-package ir.codroid.core.navigation
+package ir.codroid.calorytracker.navigation
 
 object Route {
     const val WELCOME = "welcome"

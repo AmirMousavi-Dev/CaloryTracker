@@ -7,14 +7,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.codroid.core.domain.preferences.Preferences
-import ir.codroid.core.navigation.Route
-import ir.codroid.core.util.UiEvent
 import ir.codroid.tracker_domain.use_case.TrackerUseCase
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,9 +19,6 @@ class TrackerOverviewViewModel @Inject constructor(
     preferences: Preferences,
     private val trackerUseCase: TrackerUseCase
 ) : ViewModel() {
-
-    private val _uiEvent = Channel<UiEvent>()
-    val uiEvent = _uiEvent.receiveAsFlow()
 
     var state by mutableStateOf(TrackerOverviewContract.State())
         private set
@@ -39,20 +32,6 @@ class TrackerOverviewViewModel @Inject constructor(
 
     fun onEvent(event: TrackerOverviewContract.Event) {
         when (event) {
-            is TrackerOverviewContract.Event.OnAddFoodClick -> {
-                viewModelScope.launch {
-                    _uiEvent.send(
-                        UiEvent.Navigate(
-                            route = Route.SEARCH
-                                    + "/${event.meal.mealType.name}"
-                                    + "/${state.date.dayOfMonth}"
-                                    + "/${state.date.monthValue}"
-                                    + "/${state.date.year}"
-                        )
-                    )
-                }
-            }
-
             is TrackerOverviewContract.Event.OnDeleteTrackedFoodClick -> {
                 viewModelScope.launch {
                     trackerUseCase.deleteTrackedFoodUseCase(event.trackedFood)

@@ -24,6 +24,5 @@ interface TrackerOverviewContract {
         data object OnPreviousDayClick : Event()
         data class OnToggleMealClick(val meal: Meal) : Event()
         data class OnDeleteTrackedFoodClick(val trackedFood: TrackedFood) : Event()
-        data class OnAddFoodClick(val meal: Meal) : Event()
     }
 }

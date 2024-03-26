@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.codroid.core.domain.preferences.Preferences
 import ir.codroid.core.domain.use_case.FilterOutDigitsUseCase
-import ir.codroid.core.navigation.Route
 import ir.codroid.core.util.UiEvent
 import ir.codroid.core.util.UiText
 import kotlinx.coroutines.channels.Channel
@@ -45,7 +44,7 @@ class HeightViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveHeight(heightNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.WEIGHT))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }
