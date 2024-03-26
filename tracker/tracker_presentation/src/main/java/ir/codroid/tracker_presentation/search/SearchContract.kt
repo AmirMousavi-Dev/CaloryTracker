@@ -2,7 +2,6 @@ package ir.codroid.tracker_presentation.search
 
 import ir.codroid.tracker_domain.model.MealType
 import ir.codroid.tracker_domain.model.TrackableFood
-import ir.codroid.tracker_domain.model.TrackedFood
 import java.time.LocalDate
 
 interface SearchContract {
@@ -25,7 +24,7 @@ interface SearchContract {
         ) : Event()
 
         data class OnTrackedFoodClick(
-            val food: TrackedFood,
+            val food: TrackableFood,
             val mealType: MealType,
             val date: LocalDate
         ) : Event()

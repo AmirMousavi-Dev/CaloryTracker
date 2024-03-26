@@ -33,6 +33,7 @@ class TrackerOverviewViewModel @Inject constructor(
     private var getFoodsForDateJob: Job? = null
 
     init {
+        refreshFoods()
         preferences.saveShouldShowOnboarding(false)
     }
 
@@ -61,10 +62,12 @@ class TrackerOverviewViewModel @Inject constructor(
 
             is TrackerOverviewContract.Event.OnNextDayClick -> {
                 state = state.copy(date = state.date.plusDays(1))
+                refreshFoods()
             }
 
             is TrackerOverviewContract.Event.OnPreviousDayClick -> {
                 state = state.copy(date = state.date.minusDays(1))
+                refreshFoods()
             }
 
             is TrackerOverviewContract.Event.OnToggleMealClick -> {
