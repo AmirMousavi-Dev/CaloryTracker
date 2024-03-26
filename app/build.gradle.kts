@@ -1,18 +1,21 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("dagger.hilt.android.plugin")
+    kotlin("kapt")
 }
 
 android {
     namespace = "ir.codroid.calorytracker"
-    compileSdk = 34
+    compileSdk = ProjectConfig.compileSdk
+
 
     defaultConfig {
-        applicationId = "ir.codroid.calorytracker"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = ProjectConfig.appId
+        minSdk = ProjectConfig.minSdk
+        targetSdk = ProjectConfig.targetSdk
+        versionCode = ProjectConfig.versionCode
+        versionName = ProjectConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -23,24 +26,25 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+//            proguardFiles(
+//                getDefaultProguardFile("proguard-android-optimize.txt"),
+//                "proguard-rules.pro"
+//            )
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        isCoreLibraryDesugaringEnabled = true
+        sourceCompatibility = JavaVersion.VERSION_18
+        targetCompatibility = JavaVersion.VERSION_18
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "18"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
     }
     packaging {
         resources {
@@ -51,19 +55,67 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
-    implementation("androidx.activity:activity-compose:1.8.2")
-    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+    with(Compose) {
+        implementation(compiler)
+        implementation(ui)
+        implementation(uiToolingPreview)
+        implementation(hiltNavigationCompose)
+        implementation(material)
+        implementation(runtime)
+        implementation(navigation)
+        implementation(viewModelCompose)
+        implementation(activityCompose)
+    }
+    with(DaggerHilt) {
+        implementation(hiltAndroid)
+        kapt(hiltCompiler)
+    }
+    with(Modules) {
+        implementation(project(core))
+        implementation(project(coreUi))
+        implementation(project(onboardingPresentation))
+        implementation(project(onboardingDomain))
+        implementation(project(trackerPresentation))
+        implementation(project(trackerDomain))
+        implementation(project(trackerData))
+    }
+    with(AndroidX) {
+        implementation(coreKtx)
+        implementation(appCompat)
+    }
+    with(Coil) {
+        implementation(coilCompose)
+    }
+
+    with(Google) {
+        implementation(material)
+    }
+
+    with(Retrofit) {
+        implementation(okHttp)
+        implementation(retrofit)
+        implementation(okHttpLoggingInterceptor)
+        implementation(moshiConverter)
+    }
+    with(Room) {
+        kapt(roomCompiler)
+        implementation(roomKtx)
+        implementation(roomRuntime)
+    }
+    with(Testing) {
+
+        testImplementation(junit4)
+        testImplementation(junitAndroidExt)
+        testImplementation(truth)
+        testImplementation(coroutines)
+        testImplementation(turbine)
+        testImplementation(composeUiTest)
+        testImplementation(mockk)
+        testImplementation(mockWebServer)
+
+        androidTestImplementation(hiltTesting)
+        kaptAndroidTest(DaggerHilt.hiltCompiler)
+        androidTestImplementation(testRunner)
+    }
 }
