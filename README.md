@@ -1,6 +1,6 @@
 # Calory Tracker
 ## Modular Android Applicaion
-### This is a Calory Tracker app in MVVM Architecture in Kotlin using Jetpack Compose, Room, Coroutines, Flow , Data Store and Navigation Compose.
+### This is a Calory Tracker app in Modular Architecture in Kotlin using Jetpack Compose, Room, Coroutines, Flow , Data Store and Navigation Compose.
 ### This app has 2 feature modules: OnBoarding and Tracker OverView, each feature module contains 3 sub-modules based on clean (data, scope and presentation), this architecture helps us to create a reusable module and also separates the logic. The app is from the UI. 
 
 ### It uses the latest Jetpack Compose libraries And methods For Build this app.
